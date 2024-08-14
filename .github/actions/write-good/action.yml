@@ -1,13 +1,22 @@
-name: 'Write-good Action'
-description: 'Run write-good on Markdown files'
+name: 'Write-Good Linter'
+description: 'Lints markdown files using write-good'
+
 inputs:
-  path:
-    description: 'Path to the markdown files'
+  github-token:
+    description: 'GitHub token for API access'
     required: true
-    default: '.'
+    default: ${{ github.token }}
+
 runs:
-  using: 'node12'
+  using: 'composite'
   steps:
-    - name: Run write-good
-      run: |
-        find ${{ inputs.path }} -name "*.md" -type f -exec write-good {} \;
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install write-good
+      run: npm install -g write-good
+      shell: bash
+
+    - name: Lint Markdown files
+      run: find . -name "*.md" -print0 | xargs -0 write-good
+      shell: bash
