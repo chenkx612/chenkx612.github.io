@@ -1,10 +1,8 @@
 ---
 layout: default
-title: Home
+title: 主页 
 ---
 
-# Welcome to ckx's Personal Website!
+# 欢迎来到ckx的个人网站！ 
 
-# 我是陈楷心，嘿嘿帅气可爱的男孩纸。我的老婆叫谢锦琳，世界上最可爱漂亮善解人意的女孩纸，嘿嘿我可爱她了。
-
-This is a sample website created with GitHub Pages and Markdown.
+我是ckx，嘿嘿一名帅气可爱的男孩纸。我的老婆是xjl，世界上最可爱漂亮善解人意的女孩纸，嘿嘿我可爱她了。
