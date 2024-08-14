@@ -13,5 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Run write-good
-      uses: ./.github/actions/write-good 
+      - name: Checkout code
+        uses: actions/checkout@v2   
+
+      - name: Run write-good
+        uses: ./.github/actions/write-good 
