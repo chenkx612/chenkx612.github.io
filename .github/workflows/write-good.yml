@@ -1,0 +1,22 @@
+name: Run Write-good on Markdown Files
+
+on:
+  push:
+    paths:
+      - '**/*.md'
+  pull_request:
+    paths:
+      - '**/*.md'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Run write-good
+      uses: ./.github/actions/write-good 
+      with:
+        path: '.'

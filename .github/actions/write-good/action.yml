@@ -1,0 +1,13 @@
+name: 'Write-good Action'
+description: 'Run write-good on Markdown files'
+inputs:
+  path:
+    description: 'Path to the markdown files'
+    required: true
+    default: '.'
+runs:
+  using: 'node12'
+  steps:
+    - name: Run write-good
+      run: |
+        find ${{ inputs.path }} -name "*.md" -type f -exec write-good {} \;
